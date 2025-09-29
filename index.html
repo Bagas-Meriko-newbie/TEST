@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curhat Online - Privasi Terjaga</title>
+    <style>
+        :root {
+            --primary-color: #667eea;
+            --secondary-color: #764ba2;
+            --text-color: #2d3748;
+            --light-bg: #f7fafc;
+            --white: #ffffff;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, var(--light-bg) 0%, #e6fffa 100%);
+            color: var(--text-color);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            padding: 30px 0;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: var(--shadow);
+        }
+        
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        
+        .admin-notice {
+            background-color: #fed7d7;
+            border-left: 4px solid #e53e3e;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+            font-size: 0.9rem;
+        }
+        
+        .curhat-form {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            margin-bottom: 30px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #e2e8f0;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+        
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+        
+        .btn {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+        
+        .privacy-info {
+            background-color: #e6f7ff;
+            border-left: 4px solid #1890ff;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+            font-size: 0.9rem;
+        }
+        
+        .anonymous-id {
+            background-color: #f0fff4;
+            border-left: 4px solid #48bb78;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+            font-size: 0.9rem;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 20px;
+            color: #718096;
+            font-size: 0.9rem;
+        }
+        
+        .credit {
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+        
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+            
+            .curhat-form {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Curhat Online</h1>
+            <p>Bebas curhat tanpa khawatir privasi terganggu</p>
+        </header>
+        
+        <div class="admin-notice">
+            <strong>Perhatian Admin:</strong> Hanya Wahyu Sapto Hadi yang memiliki akses ke informasi pengguna. Semua curhatan disimpan secara anonim.
+        </div>
+        
+        <div class="privacy-info">
+            <strong>Kebijakan Privasi:</strong> Kami tidak menyimpan nama, email, atau informasi pribadi Anda. Setiap curhatan diberikan ID anonim untuk referensi Anda.
+        </div>
+        
+        <div class="curhat-form">
+            <form id="curhatForm">
+                <div class="form-group">
+                    <label for="curhatContent">Apa yang ingin Anda curhatkan?</label>
+                    <textarea id="curhatContent" placeholder="Tuliskan perasaan, pikiran, atau pengalaman Anda di sini..." required></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="anonymousId">ID Anonim (opsional, untuk referensi Anda):</label>
+                    <input type="text" id="anonymousId" placeholder="Contoh: user123, anon456, dll.">
+                </div>
+                
+                <button type="submit" class="btn">Kirim Curhatan</button>
+            </form>
+        </div>
+        
+        <div class="anonymous-id">
+            <strong>Tips:</strong> Buat ID anonim unik untuk melacak curhatan Anda di masa depan. Hanya Anda dan admin (Wahyu Sapto Hadi) yang tahu ID ini.
+        </div>
+    </div>
+    
+    <div class="footer">
+        <p>Dikembangkan dengan ❤️ oleh <span class="credit">Wahyu Sapto Hadi</span></p>
+        <p>© 2024 Curhat Online - Platform Curhat dengan Privasi Terjamin</p>
+    </div>
+
+    <script>
+        document.getElementById('curhatForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const curhatContent = document.getElementById('curhatContent').value;
+            const anonymousId = document.getElementById('anonymousId').value || generateRandomId();
+            
+            // Simulasi pengiriman data - dalam implementasi real, ini akan mengirim ke server
+            console.log('Curhatan diterima:');
+            console.log('ID Anonim:', anonymousId);
+            console.log('Isi Curhatan:', curhatContent);
+            
+            // Alert untuk user
+            alert('Terima kasih telah mencurahkan isi hati Anda! Curhatan Anda telah disimpan dengan aman dengan ID: ' + anonymousId);
+            
+            // Reset form
+            document.getElementById('curhatForm').reset();
+        });
+        
+        function generateRandomId() {
+            return 'user_' + Math.random().toString(36).substr(2, 9);
+        }
+    </script>
+</body>
+</html>
